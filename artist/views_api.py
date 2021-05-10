@@ -18,7 +18,7 @@ class ArtistViewSet(viewsets.ModelViewSet):
                 artist_serializer.save()
                 return Response(artist_serializer.data, status=status.HTTP_201_CREATED)
             return Response(artist_serializer.error, status=status.HTTP_400_BAD_REQUEST)
-
+    
     @api_view(['PUT','DELETE','GET'])
     def artist_detail(self, artistId):
         if self.method == 'PUT':
